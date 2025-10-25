@@ -1,0 +1,107 @@
+{
+  "image_path": "images_train/image_ads/i0015.png",
+  "summary": "A professional, product advertisement, featuring 1 person.",
+  "target_audience": {
+    "primary_demographic": [
+      "general adults (25-54)"
+    ],
+    "characteristics": [
+      "individual consumers"
+    ],
+    "confidence": "medium",
+    "description": "Likely targeting general adults (25-54) who are individual consumers"
+  },
+  "product_type": {
+    "category": "Physical Product",
+    "description": "Consumer goods with clear product showcase",
+    "confidence": "medium"
+  },
+  "emotional_appeal": {
+    "primary_emotions": [
+      "trust",
+      "connection"
+    ],
+    "emotional_intensity": "medium",
+    "description": "Designed to make viewers feel trust and connection"
+  },
+  "visual_style": {
+    "style_descriptors": [
+      "professional",
+      "polished",
+      "simple"
+    ],
+    "color_palette": "moderate with muted colors",
+    "composition": "professionally composed with strong rule-of-thirds placement",
+    "overall_feel": "professional, polished, simple visual style"
+  },
+  "engagement_prediction": {
+    "scrollability": "Low - Likely to be scrolled past",
+    "click_likelihood": "Low - Unclear value or missing CTA",
+    "overall_performance": "Below Average - Needs improvement",
+    "performance_score": 0.35
+  },
+  "strengths": [
+    "\u2b50 Human connection through faces builds trust and relatability",
+    "\u2b50 Professional, polished design builds brand credibility"
+  ],
+  "weaknesses": [
+    "\u26a0\ufe0f Low scrollability - may be easily ignored in feeds",
+    "\u26a0\ufe0f Missing call-to-action - unclear what users should do next",
+    "\u26a0\ufe0f Poor mobile readability - difficult to view on phones (80% of users)",
+    "\u26a0\ufe0f Too sparse - lacks sufficient information to drive action",
+    "\u26a0\ufe0f No text - relies entirely on visual communication"
+  ],
+  "recommendations": [
+    "\u27a4 Add a clear call-to-action button (e.g., 'Shop Now', 'Learn More', 'Download') - CTAs increase click-through rates by 200-300%",
+    "\u27a4 Increase visual contrast and add faces to improve scroll-stopping power - consider brighter colors or central focal point",
+    "\u27a4 Increase text size and simplify design for mobile viewing - 80% of ad views happen on mobile devices",
+    "\u27a4 Clarify your value proposition - make the benefit obvious in 2 seconds or less",
+    "\u27a4 Add urgency language ('Limited Time', 'Today Only') to drive immediate action"
+  ],
+  "technical_features": {
+    "image_path": "images_train/image_ads/i0015.png",
+    "avg_brightness": 159.65,
+    "avg_saturation": 65.07,
+    "color_contrast": 78.06,
+    "color_diversity_score": 29.85,
+    "visual_complexity": 12.0,
+    "face_count": 1,
+    "face_to_frame_ratio": 4.75,
+    "image_sharpness": 1.0,
+    "clip_product_focus_score": 0.995,
+    "clip_people_present_score": 0.002,
+    "clip_luxury_aesthetic_score": 0.003,
+    "clip_playful_tone_score": 0.0,
+    "clip_minimal_design_score": 0.0,
+    "text_element_count": 0,
+    "total_text_length": 0,
+    "text_density_pct": 0.0,
+    "avg_text_size_px": 0.0,
+    "cta_keyword_count": 0,
+    "has_cta": false,
+    "button_text_count": 0,
+    "has_price": false,
+    "price_count": 0,
+    "has_discount": false,
+    "urgency_language_score": 0,
+    "attention_color_pop": 17.32,
+    "attention_contrast_ratio": 0.24,
+    "center_focus_score": 12.88,
+    "rule_of_thirds_score": 3,
+    "mobile_aspect_ratio": 1,
+    "hd_quality": 0,
+    "mobile_readability_score": 0.3,
+    "mobile_simplicity_score": 0.4,
+    "color_harmony_score": 0.636,
+    "visual_balance_score": 0.834,
+    "professional_look_score": 0.833,
+    "scrollability_score": 0.237,
+    "curiosity_gap_score": 0.6,
+    "value_prop_clarity": 0.5,
+    "information_density": "sparse",
+    "first_impression_score": 0.654,
+    "brand_product_balance": "product_focused",
+    "cta_prominence_score": 0.0,
+    "emotional_appeal_score": 0.4
+  }
+}

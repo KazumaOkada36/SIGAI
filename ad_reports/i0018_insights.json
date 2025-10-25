@@ -1,0 +1,103 @@
+{
+  "image_path": "images_train/image_ads/i0018.png",
+  "summary": "A professional, balanced brand and product ad, featuring 1 person.",
+  "target_audience": {
+    "primary_demographic": [
+      "general adults (25-54)"
+    ],
+    "characteristics": [
+      "individual consumers"
+    ],
+    "confidence": "medium",
+    "description": "Likely targeting general adults (25-54) who are individual consumers"
+  },
+  "product_type": {
+    "category": "Brand Awareness",
+    "description": "General brand advertisement without specific product focus",
+    "confidence": "low"
+  },
+  "emotional_appeal": {
+    "primary_emotions": [
+      "trust",
+      "connection"
+    ],
+    "emotional_intensity": "medium",
+    "description": "Designed to make viewers feel trust and connection"
+  },
+  "visual_style": {
+    "style_descriptors": [
+      "simple"
+    ],
+    "color_palette": "bright with muted colors",
+    "composition": "professionally composed with strong rule-of-thirds placement",
+    "overall_feel": "simple visual style"
+  },
+  "engagement_prediction": {
+    "scrollability": "Low - Likely to be scrolled past",
+    "click_likelihood": "Low - Unclear value or missing CTA",
+    "overall_performance": "Below Average - Needs improvement",
+    "performance_score": 0.28
+  },
+  "strengths": [
+    "\u2b50 Human connection through faces builds trust and relatability"
+  ],
+  "weaknesses": [
+    "\u26a0\ufe0f Low scrollability - may be easily ignored in feeds",
+    "\u26a0\ufe0f Missing call-to-action - unclear what users should do next",
+    "\u26a0\ufe0f Unclear value proposition - message is confusing",
+    "\u26a0\ufe0f Too sparse - lacks sufficient information to drive action",
+    "\u26a0\ufe0f No text - relies entirely on visual communication"
+  ],
+  "recommendations": [
+    "\u27a4 Add a clear call-to-action button (e.g., 'Shop Now', 'Learn More', 'Download') - CTAs increase click-through rates by 200-300%",
+    "\u27a4 Increase visual contrast and add faces to improve scroll-stopping power - consider brighter colors or central focal point",
+    "\u27a4 Clarify your value proposition - make the benefit obvious in 2 seconds or less",
+    "\u27a4 Add urgency language ('Limited Time', 'Today Only') to drive immediate action"
+  ],
+  "technical_features": {
+    "image_path": "images_train/image_ads/i0018.png",
+    "avg_brightness": 182.48,
+    "avg_saturation": 32.47,
+    "color_contrast": 59.83,
+    "color_diversity_score": 14.63,
+    "visual_complexity": 8.32,
+    "face_count": 1,
+    "face_to_frame_ratio": 20.37,
+    "image_sharpness": 1.0,
+    "clip_product_focus_score": 0.184,
+    "clip_people_present_score": 0.072,
+    "clip_luxury_aesthetic_score": 0.569,
+    "clip_playful_tone_score": 0.116,
+    "clip_minimal_design_score": 0.059,
+    "text_element_count": 0,
+    "total_text_length": 0,
+    "text_density_pct": 0.0,
+    "avg_text_size_px": 0.0,
+    "cta_keyword_count": 0,
+    "has_cta": false,
+    "button_text_count": 0,
+    "has_price": false,
+    "price_count": 0,
+    "has_discount": false,
+    "urgency_language_score": 0,
+    "attention_color_pop": 0.96,
+    "attention_contrast_ratio": 0.562,
+    "center_focus_score": 7.7,
+    "rule_of_thirds_score": 3,
+    "mobile_aspect_ratio": 0,
+    "hd_quality": 0,
+    "mobile_readability_score": 0.7,
+    "mobile_simplicity_score": 0.58,
+    "color_harmony_score": 0.545,
+    "visual_balance_score": 0.797,
+    "professional_look_score": 0.779,
+    "scrollability_score": 0.223,
+    "curiosity_gap_score": 0.6,
+    "value_prop_clarity": 0.2,
+    "information_density": "sparse",
+    "first_impression_score": 0.547,
+    "brand_product_balance": "balanced",
+    "cta_prominence_score": 0.0,
+    "emotional_appeal_score": 0.4
+  }
+}

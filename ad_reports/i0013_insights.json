@@ -1,0 +1,102 @@
+{
+  "image_path": "images_train/image_ads/i0013.png",
+  "summary": "A professional, balanced brand and product ad.",
+  "target_audience": {
+    "primary_demographic": [
+      "general adults (25-54)"
+    ],
+    "characteristics": [],
+    "confidence": "medium",
+    "description": "Likely targeting general adults (25-54) who are broad appeal"
+  },
+  "product_type": {
+    "category": "Brand Awareness",
+    "description": "General brand advertisement without specific product focus",
+    "confidence": "low"
+  },
+  "emotional_appeal": {
+    "primary_emotions": [
+      "neutral",
+      "informational"
+    ],
+    "emotional_intensity": "low",
+    "description": "Designed to make viewers feel neutral and informational"
+  },
+  "visual_style": {
+    "style_descriptors": [
+      "simple"
+    ],
+    "color_palette": "bright with muted colors",
+    "composition": "professionally composed with strong rule-of-thirds placement",
+    "overall_feel": "simple visual style"
+  },
+  "engagement_prediction": {
+    "scrollability": "Low - Likely to be scrolled past",
+    "click_likelihood": "Low - Unclear value or missing CTA",
+    "overall_performance": "Below Average - Needs improvement",
+    "performance_score": 0.34
+  },
+  "strengths": [
+    "\u2713 Functional design with standard advertising elements"
+  ],
+  "weaknesses": [
+    "\u26a0\ufe0f Low scrollability - may be easily ignored in feeds",
+    "\u26a0\ufe0f Missing call-to-action - unclear what users should do next",
+    "\u26a0\ufe0f No human element - lacks personal connection",
+    "\u26a0\ufe0f Too sparse - lacks sufficient information to drive action",
+    "\u26a0\ufe0f No text - relies entirely on visual communication"
+  ],
+  "recommendations": [
+    "\u27a4 Add a clear call-to-action button (e.g., 'Shop Now', 'Learn More', 'Download') - CTAs increase click-through rates by 200-300%",
+    "\u27a4 Increase visual contrast and add faces to improve scroll-stopping power - consider brighter colors or central focal point",
+    "\u27a4 Consider adding human faces to create emotional connection - ads with faces see 20-40% higher engagement",
+    "\u27a4 Clarify your value proposition - make the benefit obvious in 2 seconds or less",
+    "\u27a4 Add urgency language ('Limited Time', 'Today Only') to drive immediate action"
+  ],
+  "technical_features": {
+    "image_path": "images_train/image_ads/i0013.png",
+    "avg_brightness": 205.3,
+    "avg_saturation": 71.35,
+    "color_contrast": 70.41,
+    "color_diversity_score": 6.37,
+    "visual_complexity": 6.27,
+    "face_count": 0,
+    "face_to_frame_ratio": 0.0,
+    "image_sharpness": 1.0,
+    "clip_product_focus_score": 0.593,
+    "clip_people_present_score": 0.043,
+    "clip_luxury_aesthetic_score": 0.31,
+    "clip_playful_tone_score": 0.051,
+    "clip_minimal_design_score": 0.003,
+    "text_element_count": 0,
+    "total_text_length": 0,
+    "text_density_pct": 0.0,
+    "avg_text_size_px": 0.0,
+    "cta_keyword_count": 0,
+    "has_cta": false,
+    "button_text_count": 0,
+    "has_price": false,
+    "price_count": 0,
+    "has_discount": false,
+    "urgency_language_score": 0,
+    "attention_color_pop": 25.17,
+    "attention_contrast_ratio": 0.599,
+    "center_focus_score": 8.73,
+    "rule_of_thirds_score": 3,
+    "mobile_aspect_ratio": 0,
+    "hd_quality": 0,
+    "mobile_readability_score": 0.7,
+    "mobile_simplicity_score": 0.69,
+    "color_harmony_score": 0.577,
+    "visual_balance_score": 0.738,
+    "professional_look_score": 0.786,
+    "scrollability_score": 0.237,
+    "curiosity_gap_score": 0.6,
+    "value_prop_clarity": 0.5,
+    "information_density": "sparse",
+    "first_impression_score": 0.624,
+    "brand_product_balance": "balanced",
+    "cta_prominence_score": 0.0,
+    "emotional_appeal_score": 0.0
+  }
+}
