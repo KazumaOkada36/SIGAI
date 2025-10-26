@@ -1,0 +1,47 @@
+{
+  "emotional_signals": {
+    "primary_emotion": "urgency",
+    "emotional_intensity": 8,
+    "aspirational_appeal": 7,
+    "humor_present": false,
+    "creates_fomo": true,
+    "evokes_nostalgia": false,
+    "trust_building_elements": 6
+  },
+  "visual_composition": {
+    "visual_complexity": 6,
+    "color_scheme": "bold",
+    "dominant_colors": [
+      "black",
+      "orange"
+    ],
+    "contrast_level": 9,
+    "whitespace_usage": 4,
+    "symmetry_score": 5,
+    "motion_energy": 7,
+    "professional_polish": 8
+  },
+  "engagement_predictors": {
+    "scroll_stopping_power": 9,
+    "first_3_sec_hook": 8,
+    "curiosity_gap": 6,
+    "social_proof_elements": 5,
+    "scarcity_indicators": 9,
+    "pattern_interruption": 7,
+    "memability": 8
+  },
+  "predicted_performance": {
+    "estimated_ctr": 8,
+    "estimated_engagement": 7,
+    "estimated_conversion_potential": 9,
+    "virality_potential": 6,
+    "overall_effectiveness": 8
+  },
+  "_meta": {
+    "ad_id": "i0001",
+    "extraction_timestamp": "2025-10-25T20:09:43.601029",
+    "model": "gpt-4o-mini",
+    "lava_request_id": "req_01K8F7WAPK9EH6J83AAJS3VJQ4",
+    "gateway": "lava"
+  }
+}

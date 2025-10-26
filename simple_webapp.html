@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Intelligence - AI-Powered Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .drop-zone {
+            background: white;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            border: 3px dashed #cbd5e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .drop-zone:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .drop-zone.drag-active {
+            border-color: #667eea;
+            background: #f7fafc;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .drop-zone p {
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .preview-container {
+            margin-top: 2rem;
+        }
+
+        .preview-image, .preview-video {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(102, 126, 234, 0.3);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grade-badge {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .grade-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .grade-score {
+            font-size: 1.2rem;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .summary-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .insight-item {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .metric-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .error {
+            background: #fee;
+            color: #c53030;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid #fc8181;
+            margin: 1rem auto;
+            max-width: 600px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">✨ Ad Intelligence</div>
+        <div class="tagline">AI-Powered Advertisement Analysis</div>
+    </header>
+
+    <main class="main-content">
+        <!-- Upload Section -->
+        <div id="uploadSection">
+            <div class="drop-zone" id="dropZone">
+                <div class="upload-icon">📤</div>
+                <h2>Upload Your Advertisement</h2>
+                <p>Drag & drop or click to select</p>
+                <div>📷 Images: PNG, JPG, GIF | 🎬 Videos: MP4, MOV, AVI</div>
+                <input type="file" id="fileInput" class="file-input" accept="image/*,video/*">
+            </div>
+
+            <div id="previewSection" class="hidden">
+                <div class="preview-container">
+                    <img id="previewImage" class="preview-image hidden" alt="Preview">
+                    <video id="previewVideo" class="preview-video hidden" controls></video>
+                    <div style="text-align: center;">
+                        <button class="btn btn-secondary" onclick="reset()">Change File</button>
+                        <button class="btn btn-primary" id="analyzeBtn" onclick="analyzeAd()">✨ Analyze Ad</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loadingSection" class="loading">
+            <div class="spinner"></div>
+            <h2>Analyzing your advertisement...</h2>
+            <p>This may take a few seconds</p>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsSection" class="results">
+            <div id="gradeBadge" class="grade-badge">
+                <div class="grade-letter" id="gradeLetter">A</div>
+                <div class="grade-score" id="gradeScore">8/10</div>
+            </div>
+
+            <div class="summary-card">
+                <h3 id="summaryHeadline">Grade A - Excellent Performance</h3>
+                <p id="summaryDescription">This ad scored 8/10 for overall effectiveness.</p>
+                <div id="insights"></div>
+            </div>
+
+            <div class="features-grid" id="featuresGrid"></div>
+
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="reset()">Analyze Another Ad</button>
+            </div>
+        </div>
+
+        <div id="errorSection" class="error hidden"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Powered by GPT-4 Vision via Lava • Built for AppLovin Challenge</p>
+    </footer>
+
+    <script>
+        let selectedFile = null;
+
+        // Drag and drop
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragenter', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-active');
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-active');
+        });
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-active');
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files[0]) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            selectedFile = file;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const previewImage = document.getElementById('previewImage');
+                const previewVideo = document.getElementById('previewVideo');
+                
+                if (file.type.startsWith('image/')) {
+                    previewImage.src = e.target.result;
+                    previewImage.classList.remove('hidden');
+                    previewVideo.classList.add('hidden');
+                } else if (file.type.startsWith('video/')) {
+                    previewVideo.src = e.target.result;
+                    previewVideo.classList.remove('hidden');
+                    previewImage.classList.add('hidden');
+                }
+                
+                document.getElementById('uploadSection').querySelector('.drop-zone').style.display = 'none';
+                document.getElementById('previewSection').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function analyzeAd() {
+            if (!selectedFile) return;
+
+            // Hide upload, show loading
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'block';
+            document.getElementById('errorSection').classList.add('hidden');
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            try {
+                const response = await fetch('http://localhost:5000/api/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Analysis failed');
+                }
+
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                document.getElementById('loadingSection').style.display = 'none';
+                document.getElementById('errorSection').textContent = '❌ ' + error.message;
+                document.getElementById('errorSection').classList.remove('hidden');
+                document.getElementById('uploadSection').style.display = 'block';
+            }
+        }
+
+        function displayResults(data) {
+            // Hide loading, show results
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('resultsSection').style.display = 'block';
+
+            const summary = data.summary;
+            
+            // Grade badge
+            const gradeColors = {
+                'A': '#10b981',
+                'B': '#3b82f6',
+                'C': '#f59e0b',
+                'D': '#ef4444',
+                'F': '#dc2626'
+            };
+            
+            document.getElementById('gradeBadge').style.backgroundColor = gradeColors[summary.grade];
+            document.getElementById('gradeLetter').textContent = summary.grade;
+            document.getElementById('gradeScore').textContent = summary.overall_score + '/10';
+            
+            // Summary
+            document.getElementById('summaryHeadline').textContent = summary.headline;
+            document.getElementById('summaryDescription').textContent = summary.description;
+            
+            // Insights
+            const insightsDiv = document.getElementById('insights');
+            insightsDiv.innerHTML = summary.key_insights.map(insight => 
+                `<div class="insight-item">${insight}</div>`
+            ).join('');
+            
+            // Features
+            const featuresGrid = document.getElementById('featuresGrid');
+            featuresGrid.innerHTML = '';
+            
+            if (data.type === 'image' && data.features.engagement_predictors) {
+                const ep = data.features.engagement_predictors;
+                featuresGrid.innerHTML += createFeatureCard('🎯 Engagement Signals', [
+                    { label: 'Scroll-Stopping Power', value: ep.scroll_stopping_power },
+                    { label: 'Curiosity Gap', value: ep.curiosity_gap },
+                    { label: 'Memability', value: ep.memability }
+                ]);
+            }
+            
+            if (data.type === 'video' && data.features.video_level_features) {
+                const vl = data.features.video_level_features;
+                featuresGrid.innerHTML += createFeatureCard('📊 Video Performance', [
+                    { label: 'First 3-Sec Hook', value: vl.overall_engagement.first_3_seconds_hook },
+                    { label: 'Completion Rate', value: vl.predicted_performance.estimated_completion_rate }
+                ]);
+            }
+        }
+
+        function createFeatureCard(title, metrics) {
+            return `
+                <div class="feature-card">
+                    <h4>${title}</h4>
+                    ${metrics.map(m => createMetricBar(m.label, m.value)).join('')}
+                </div>
+            `;
+        }
+
+        function createMetricBar(label, value) {
+            const percentage = (value / 10) * 100;
+            const color = percentage >= 70 ? '#10b981' : percentage >= 50 ? '#f59e0b' : '#ef4444';
+            
+            return `
+                <div class="metric-bar">
+                    <div class="metric-label">
+                        <span>${label}</span>
+                        <span>${value}/10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${percentage}%; background-color: ${color};"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function reset() {
+            selectedFile = null;
+            document.getElementById('uploadSection').style.display = 'block';
+            document.getElementById('uploadSection').querySelector('.drop-zone').style.display = 'block';
+            document.getElementById('previewSection').classList.add('hidden');
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('errorSection').classList.add('hidden');
+            document.getElementById('fileInput').value = '';
+        }
+    </script>
+</body>
+</html>
