@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "type": "image",
+  "features": {
+    "_meta": {
+      "ad_id": "20251026_032558_i0006",
+      "error": "Lava API error: 504 - An error occurred with your deployment\n\nFUNCTION_INVOCATION_TIMEOUT\n\nsfo1::lw6jv-1761474358091-be2c686871ef\n"
+    }
+  },
+  "summary": {
+    "grade": "D",
+    "overall_score": 5,
+    "headline": "Grade D - Below Average",
+    "description": "This ad scored 5/10 for overall effectiveness.",
+    "key_insights": [
+      "\u26a0\ufe0f Weak scroll-stopping power (0/10)",
+      "\u26a0\ufe0f No clear call-to-action",
+      "\ud83d\ude0a Primary emotion: unknown (intensity: 0/10)"
+    ]
+  },
+  "metadata": {
+    "filename": "i0006.png",
+    "upload_timestamp": "20251026_032558",
+    "file_type": "image"
+  }
+}
