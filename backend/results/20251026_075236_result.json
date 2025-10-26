@@ -1,0 +1,245 @@
+{
+  "success": true,
+  "type": "video",
+  "filename": "20251026_075236_v0009",
+  "timestamp": "2025-10-26T07:52:54.491753",
+  "summary": {
+    "grade": "C",
+    "overall_score": 6.0,
+    "headline": "Grade C - Below Average",
+    "description": "This ad scored 6.0/10 for overall effectiveness.",
+    "key_insights": [
+      "\u2705 Clear call-to-action present",
+      "\u2705 Strong narrative structure"
+    ]
+  },
+  "features": {
+    "video_id": "20251026_075236_v0009",
+    "frame_analyses": [
+      {
+        "temporal_context": {
+          "estimated_position": "opening",
+          "pacing": "medium",
+          "momentum": 5
+        },
+        "frame_content": {
+          "primary_focus": "text",
+          "visual_energy": 4,
+          "information_density": 3
+        },
+        "engagement_signals": {
+          "hook_strength": 6,
+          "attention_retention": 5,
+          "emotional_peak": 4,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 2,
+          "scene_complexity": 3,
+          "text_legibility": 7,
+          "sound_implied": "silence"
+        },
+        "timestamp": 0.0,
+        "frame_number": 0
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "middle",
+          "pacing": "fast",
+          "momentum": 7
+        },
+        "frame_content": {
+          "primary_focus": "action",
+          "visual_energy": 8,
+          "information_density": 5
+        },
+        "engagement_signals": {
+          "hook_strength": 7,
+          "attention_retention": 6,
+          "emotional_peak": 5,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 8,
+          "scene_complexity": 6,
+          "text_legibility": 4,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 3.7120416666666665,
+        "frame_number": 89
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "middle",
+          "pacing": "medium",
+          "momentum": 5
+        },
+        "frame_content": {
+          "primary_focus": "person",
+          "visual_energy": 6,
+          "information_density": 4
+        },
+        "engagement_signals": {
+          "hook_strength": 7,
+          "attention_retention": 6,
+          "emotional_peak": 5,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 3,
+          "scene_complexity": 4,
+          "text_legibility": 0,
+          "sound_implied": "silence"
+        },
+        "timestamp": 7.465791666666666,
+        "frame_number": 179
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "hook",
+          "pacing": "medium",
+          "momentum": 7
+        },
+        "frame_content": {
+          "primary_focus": "text",
+          "visual_energy": 6,
+          "information_density": 5
+        },
+        "engagement_signals": {
+          "hook_strength": 8,
+          "attention_retention": 7,
+          "emotional_peak": 5,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 4,
+          "scene_complexity": 5,
+          "text_legibility": 8,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 11.219541666666666,
+        "frame_number": 269
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "cta",
+          "pacing": "medium",
+          "momentum": 7
+        },
+        "frame_content": {
+          "primary_focus": "text",
+          "visual_energy": 6,
+          "information_density": 5
+        },
+        "engagement_signals": {
+          "hook_strength": 5,
+          "attention_retention": 6,
+          "emotional_peak": 4,
+          "cta_presence": true
+        },
+        "video_specific": {
+          "motion_intensity": 4,
+          "scene_complexity": 5,
+          "text_legibility": 8,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 14.973291666666666,
+        "frame_number": 359
+      }
+    ],
+    "video_level_features": {
+      "overall_engagement": {
+        "average_hook_strength": 6.6,
+        "average_attention_retention": 6.0,
+        "first_3_seconds_hook": 6,
+        "has_clear_cta": true,
+        "opening_hook_present": false
+      },
+      "video_dynamics": {
+        "average_motion_intensity": 4.2,
+        "pacing_variety": 2,
+        "narrative_arc": "clear"
+      },
+      "predicted_performance": {
+        "estimated_completion_rate": 6.0,
+        "estimated_engagement": 6.0,
+        "scroll_stop_likelihood": 6
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-10-26T07:52:54.490903",
+      "model": "gpt-4o-mini",
+      "frames_analyzed": 5
+    }
+  },
+  "critical_weaknesses": [],
+  "key_strengths": [
+    "HIGH: Clear call-to-action present",
+    "HIGH: Strong narrative structure"
+  ],
+  "improvement_roadmap": {
+    "quick_wins": [
+      {
+        "action": "Strengthen opening hook with immediate attention grabber",
+        "impact": "+15-20% completion rate",
+        "effort": "low",
+        "priority": 1
+      }
+    ],
+    "medium_term": [
+      {
+        "action": "Increase visual dynamism with motion and transitions",
+        "impact": "+12-18% attention retention",
+        "effort": "medium",
+        "priority": 2
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Professional video production with enhanced storytelling",
+        "impact": "+30-40% overall performance",
+        "effort": "high",
+        "priority": 3
+      }
+    ]
+  },
+  "ab_test_recommendations": [
+    {
+      "test": "Opening Hook Variation",
+      "hypothesis": "Stronger visual hook in first 3 seconds increases completion",
+      "expected_lift": "15-20%",
+      "variant_suggestion": "Test bold text overlay vs dynamic visual reveal"
+    },
+    {
+      "test": "Call-to-Action Placement",
+      "hypothesis": "Earlier CTA introduction improves conversion",
+      "expected_lift": "10-12%",
+      "variant_suggestion": "Test CTA at 15s vs end of video"
+    },
+    {
+      "test": "Video Length",
+      "hypothesis": "Shorter version maintains engagement better",
+      "expected_lift": "12-18%",
+      "variant_suggestion": "Test 15s vs 30s version"
+    }
+  ],
+  "executive_summary": {
+    "overall_grade": "C",
+    "one_sentence_verdict": "Video ad shows below average with room for optimization",
+    "biggest_opportunity": "Strengthen opening hook and add clear CTA",
+    "estimated_roi_multiplier": "1.5-2x"
+  },
+  "ai_generated": true,
+  "metadata": {
+    "filename": "v0009.mp4",
+    "upload_timestamp": "20251026_075236",
+    "file_type": "video",
+    "target_audience": {
+      "ageMin": 18,
+      "ageMax": 65,
+      "gender": "all",
+      "demographics": []
+    },
+    "ai_powered": true
+  }
+}

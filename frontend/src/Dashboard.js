@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import { Upload, FileImage, FileVideo, Sparkles, TrendingUp, Eye, MessageSquare, Target, LogOut, Settings, X, Home, History, Save } from 'lucide-react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { Upload, FileImage, FileVideo, Sparkles, TrendingUp, Eye, MessageSquare, Target, LogOut, Settings, X, Home, History, Save, ArrowLeft } from 'lucide-react';
 import BubbleMap from './BubbleMap';
 import ImprovementRoadmap from './ImprovementRoadmap';
 import ABTestRecommendations from './ABTestRecommendations';
 import './Dashboard.css';
 
-function Dashboard({ user, onLogout, onNavigate }) {
+function Dashboard({ user, onLogout, onNavigate, preloadedAnalysis }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [analyzing, setAnalyzing] = useState(false);
@@ -28,6 +28,18 @@ function Dashboard({ user, onLogout, onNavigate }) {
     'Travelers', 'Tech Enthusiasts', 'Fitness Enthusiasts', 'Foodies',
     'Gamers', 'Musicians', 'Artists', 'Entrepreneurs', 'Retirees'
   ];
+
+  // Load preloaded analysis if provided
+  useEffect(() => {
+    if (preloadedAnalysis) {
+      setResult(preloadedAnalysis.fullResult);
+      setPreview(preloadedAnalysis.thumbnail);
+      if (preloadedAnalysis.targetAudience) {
+        setTargetAudience(preloadedAnalysis.targetAudience);
+      }
+      setSaved(true); // Mark as already saved since it's from history
+    }
+  }, [preloadedAnalysis]);
 
   const handleDrag = useCallback((e) => {
     e.preventDefault();
@@ -81,7 +93,7 @@ function Dashboard({ user, onLogout, onNavigate }) {
 
     const analysisData = {
       id: Date.now().toString(),
-      filename: file.name,
+      filename: file?.name || preloadedAnalysis?.filename || 'Unknown',
       type: result.type,
       grade: result.summary.grade,
       score: result.summary.overall_score,
@@ -136,6 +148,7 @@ function Dashboard({ user, onLogout, onNavigate }) {
     setPreview(null);
     setResult(null);
     setError(null);
+    setSaved(false);
   };
 
   const getGradeColor = (grade) => {
@@ -159,6 +172,12 @@ function Dashboard({ user, onLogout, onNavigate }) {
             <span className="nav-logo-text">AdIntel</span>
           </div>
           <div className="nav-right">
+            {preloadedAnalysis && (
+              <button className="nav-text-btn" onClick={() => onNavigate && onNavigate('history')}>
+                <ArrowLeft size={18} />
+                Back to History
+              </button>
+            )}
             <button className="nav-text-btn" onClick={() => onNavigate && onNavigate('history')}>
               <History size={18} />
               History
@@ -219,15 +238,15 @@ function Dashboard({ user, onLogout, onNavigate }) {
                   <button className="remove-file-btn" onClick={reset}>
                     <X size={20} />
                   </button>
-                  {file.type.startsWith('image/') ? (
+                  {file?.type.startsWith('image/') ? (
                     <img src={preview} alt="Preview" className="preview-media" />
                   ) : (
                     <video src={preview} controls className="preview-media" />
                   )}
                   <div className="file-info">
-                    <span className="file-name">{file.name}</span>
+                    <span className="file-name">{file?.name}</span>
                     <span className="file-size">
-                      {(file.size / 1024 / 1024).toFixed(2)} MB
+                      {file ? (file.size / 1024 / 1024).toFixed(2) : '0'} MB
                     </span>
                   </div>
                 </div>
@@ -388,14 +407,16 @@ function Dashboard({ user, onLogout, onNavigate }) {
                 <p>Here's what we found about your advertisement</p>
               </div>
               <div className="results-actions">
-                <button 
-                  onClick={saveAnalysis} 
-                  className={`save-btn ${saved ? 'saved' : ''}`}
-                  disabled={saved}
-                >
-                  <Save size={18} />
-                  {saved ? 'Saved!' : 'Save Analysis'}
-                </button>
+                {!preloadedAnalysis && (
+                  <button 
+                    onClick={saveAnalysis} 
+                    className={`save-btn ${saved ? 'saved' : ''}`}
+                    disabled={saved}
+                  >
+                    <Save size={18} />
+                    {saved ? 'Saved!' : 'Save Analysis'}
+                  </button>
+                )}
                 <button onClick={reset} className="new-analysis-btn">
                   Analyze Another Ad
                 </button>

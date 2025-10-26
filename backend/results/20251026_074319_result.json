@@ -1,0 +1,368 @@
+{
+  "success": true,
+  "type": "image",
+  "filename": "20251026_074319_i0009",
+  "timestamp": "2025-10-26T07:43:56.075842",
+  "summary": {
+    "grade": "A-",
+    "overall_score": 9,
+    "headline": "The ad effectively communicates the benefits of the product but lacks urgency and social proof.",
+    "description": "Incorporate urgency and scarcity elements to drive immediate action.",
+    "key_insights": [
+      "\u2705 Strong visual appeal with impact (HIGH) - the clean design and color scheme create a calming effect.",
+      "\u2705 Clear value proposition with impact (HIGH) - the focus on back pain relief is direct and relatable.",
+      "\u26a0\ufe0f Lack of urgency in pricing with severity (MEDIUM) - the price is stated but not emphasized as a limited-time offer.",
+      "\u26a0\ufe0f Limited social proof elements with severity (LOW) - no testimonials or reviews included."
+    ]
+  },
+  "features": {
+    "emotional_signals": {
+      "primary_emotion": "trust",
+      "emotional_intensity": 7,
+      "emotional_authenticity": 8,
+      "aspirational_appeal": 6,
+      "humor_present": 1,
+      "creates_fomo": 1,
+      "fomo_intensity": 1,
+      "trust_building_elements": 8,
+      "vulnerability_shown": 5,
+      "relatability_score": 7
+    },
+    "visual_composition": {
+      "visual_complexity": 4,
+      "composition_balance": 7,
+      "rule_of_thirds_adherence": 6,
+      "focal_point_clarity": 8,
+      "color_scheme": "muted",
+      "color_psychology_match": 7,
+      "dominant_colors": [
+        "blue",
+        "white",
+        "gray"
+      ],
+      "color_harmony": 8,
+      "contrast_level": 6,
+      "whitespace_usage": 7,
+      "visual_hierarchy_clarity": 8,
+      "professional_polish": 9,
+      "production_quality": 9,
+      "lighting_quality": 8
+    },
+    "engagement_predictors": {
+      "scroll_stopping_power": 6,
+      "first_3_sec_hook": 7,
+      "attention_retention": 6,
+      "curiosity_gap": 5,
+      "social_proof_elements": 4,
+      "scarcity_indicators": 3,
+      "urgency_level": 4,
+      "pattern_interruption": 5,
+      "novelty_factor": 6,
+      "memability": 7,
+      "shareability": 5
+    },
+    "copy_analysis": {
+      "headline_strength": 8,
+      "headline_clarity": 9,
+      "value_prop_clarity": 8,
+      "benefit_focused": 9,
+      "readability_score": 8,
+      "power_words_used": 7,
+      "call_to_action_present": 1,
+      "cta_strength": 7,
+      "cta_specificity": 6,
+      "cta_urgency": 5,
+      "message_clarity": 9,
+      "cta_text": "from $1,299",
+      "headline_text": "MEET THE BED FOR BACK PAIN",
+      "body_copy_summary": "The ad emphasizes relief from back pain and highlights pricing."
+    },
+    "predicted_performance": {
+      "estimated_ctr": 7,
+      "estimated_engagement_rate": 6,
+      "estimated_conversion_potential": 8,
+      "virality_potential": 5,
+      "overall_effectiveness": 7
+    },
+    "critical_weaknesses": [
+      "Lack of urgency in pricing with severity (MEDIUM) - the price is stated but not emphasized as a limited-time offer.",
+      "Limited social proof elements with severity (LOW) - no testimonials or reviews included.",
+      "Scarcity indicators are weak with severity (LOW) - no mention of limited stock or time-sensitive offers."
+    ],
+    "key_strengths": [
+      "Strong visual appeal with impact (HIGH) - the clean design and color scheme create a calming effect.",
+      "Clear value proposition with impact (HIGH) - the focus on back pain relief is direct and relatable.",
+      "High production quality with impact (HIGH) - the ad looks professional and polished."
+    ],
+    "executive_summary": {
+      "overall_grade": "A-",
+      "one_sentence_verdict": "The ad effectively communicates the benefits of the product but lacks urgency and social proof.",
+      "biggest_opportunity": "Incorporate urgency and scarcity elements to drive immediate action.",
+      "estimated_roi_multiplier": "3x"
+    },
+    "improvement_roadmap": {
+      "quick_wins": [
+        {
+          "action": "Add a limited-time offer banner above the headline to create urgency.",
+          "impact": "+10-12% CTR",
+          "effort": "low",
+          "priority": 1
+        },
+        {
+          "action": "Increase the font size of the 'from $1,299' text to 20px and change its color to a high-contrast yellow.",
+          "impact": "+8-10% CTR",
+          "effort": "low",
+          "priority": 2
+        },
+        {
+          "action": "Include a testimonial quote in a speech bubble format near the bottom of the ad.",
+          "impact": "+6-8% CTR",
+          "effort": "low",
+          "priority": 3
+        },
+        {
+          "action": "Add a countdown timer graphic next to the CTA to emphasize urgency.",
+          "impact": "+7-9% CTR",
+          "effort": "low",
+          "priority": 4
+        }
+      ],
+      "medium_term": [
+        {
+          "action": "Incorporate a section for customer reviews with star ratings below the bed image.",
+          "impact": "+12-15% CTR",
+          "effort": "medium",
+          "priority": 1
+        },
+        {
+          "action": "Revise the headline to include urgency, e.g., 'Limited Time: MEET THE BED FOR BACK PAIN Relief'.",
+          "impact": "+10-12% CTR",
+          "effort": "medium",
+          "priority": 2
+        },
+        {
+          "action": "Create a visual element indicating limited stock, such as 'Only 50 Left!' in a badge format.",
+          "impact": "+8-10% CTR",
+          "effort": "medium",
+          "priority": 3
+        }
+      ],
+      "long_term": [
+        {
+          "action": "Redesign the ad layout to include a more prominent CTA button with contrasting colors and larger size.",
+          "impact": "+15-20% CTR",
+          "effort": "high",
+          "priority": 1
+        },
+        {
+          "action": "Develop a video ad version showcasing customer testimonials and product benefits.",
+          "impact": "+20-25% CTR",
+          "effort": "high",
+          "priority": 2
+        }
+      ]
+    },
+    "ab_test_recommendations": [
+      {
+        "test": "CTA Button: Current Blue vs High-Contrast Orange",
+        "hypothesis": "High-contrast colors draw more attention and increase click-through rates.",
+        "expected_lift": "10-15%",
+        "variant_suggestion": "Change button color from #4A90E2 to #FF6B35, increase size by 25%, add drop shadow."
+      },
+      {
+        "test": "Headline Variations: 'MEET THE BED FOR BACK PAIN' vs 'Limited Time: MEET THE BED FOR BACK PAIN Relief'",
+        "hypothesis": "Adding urgency in the headline will encourage immediate action.",
+        "expected_lift": "8-12%",
+        "variant_suggestion": "Change headline text to 'Limited Time: MEET THE BED FOR BACK PAIN Relief'."
+      },
+      {
+        "test": "Image Change: Current Image vs Image with Customer Using the Bed",
+        "hypothesis": "Showing a customer using the product can enhance relatability and trust.",
+        "expected_lift": "10-15%",
+        "variant_suggestion": "Replace current image with one showing a satisfied customer using the bed."
+      },
+      {
+        "test": "Urgency Indicators: No Countdown Timer vs Countdown Timer Present",
+        "hypothesis": "Adding a countdown timer will create urgency and prompt quicker decisions.",
+        "expected_lift": "12-15%",
+        "variant_suggestion": "Add a countdown timer graphic next to the CTA."
+      },
+      {
+        "test": "Social Proof: No Testimonials vs Testimonials Included",
+        "hypothesis": "Including testimonials will increase trust and encourage purchases.",
+        "expected_lift": "10-15%",
+        "variant_suggestion": "Add a testimonial section with quotes and star ratings."
+      },
+      {
+        "test": "Color Scheme: Current Colors vs Warmer Tones",
+        "hypothesis": "Warmer tones can create a more inviting atmosphere, increasing engagement.",
+        "expected_lift": "8-10%",
+        "variant_suggestion": "Change dominant colors to warmer tones like soft oranges or yellows."
+      },
+      {
+        "test": "Layout Variations: Current Layout vs More Visual Elements",
+        "hypothesis": "A more dynamic layout with visual elements will capture attention better.",
+        "expected_lift": "10-12%",
+        "variant_suggestion": "Incorporate visual elements like badges for urgency and stock levels."
+      }
+    ],
+    "_meta": {
+      "ad_id": "20251026_074319_i0009",
+      "extraction_timestamp": "2025-10-26T07:43:56.075624",
+      "model": "gpt-4o-mini",
+      "lava_request_id": "req_01K8GFJJNH6E1RE2FFTA020H59",
+      "tokens_used": {
+        "prompt_tokens": 26598,
+        "completion_tokens": 802,
+        "total_tokens": 27400,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "gateway": "lava",
+      "ai_generated_recommendations": true
+    }
+  },
+  "critical_weaknesses": [
+    "Lack of urgency in pricing with severity (MEDIUM) - the price is stated but not emphasized as a limited-time offer.",
+    "Limited social proof elements with severity (LOW) - no testimonials or reviews included.",
+    "Scarcity indicators are weak with severity (LOW) - no mention of limited stock or time-sensitive offers."
+  ],
+  "key_strengths": [
+    "Strong visual appeal with impact (HIGH) - the clean design and color scheme create a calming effect.",
+    "Clear value proposition with impact (HIGH) - the focus on back pain relief is direct and relatable.",
+    "High production quality with impact (HIGH) - the ad looks professional and polished."
+  ],
+  "improvement_roadmap": {
+    "quick_wins": [
+      {
+        "action": "Add a limited-time offer banner above the headline to create urgency.",
+        "impact": "+10-12% CTR",
+        "effort": "low",
+        "priority": 1
+      },
+      {
+        "action": "Increase the font size of the 'from $1,299' text to 20px and change its color to a high-contrast yellow.",
+        "impact": "+8-10% CTR",
+        "effort": "low",
+        "priority": 2
+      },
+      {
+        "action": "Include a testimonial quote in a speech bubble format near the bottom of the ad.",
+        "impact": "+6-8% CTR",
+        "effort": "low",
+        "priority": 3
+      },
+      {
+        "action": "Add a countdown timer graphic next to the CTA to emphasize urgency.",
+        "impact": "+7-9% CTR",
+        "effort": "low",
+        "priority": 4
+      }
+    ],
+    "medium_term": [
+      {
+        "action": "Incorporate a section for customer reviews with star ratings below the bed image.",
+        "impact": "+12-15% CTR",
+        "effort": "medium",
+        "priority": 1
+      },
+      {
+        "action": "Revise the headline to include urgency, e.g., 'Limited Time: MEET THE BED FOR BACK PAIN Relief'.",
+        "impact": "+10-12% CTR",
+        "effort": "medium",
+        "priority": 2
+      },
+      {
+        "action": "Create a visual element indicating limited stock, such as 'Only 50 Left!' in a badge format.",
+        "impact": "+8-10% CTR",
+        "effort": "medium",
+        "priority": 3
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Redesign the ad layout to include a more prominent CTA button with contrasting colors and larger size.",
+        "impact": "+15-20% CTR",
+        "effort": "high",
+        "priority": 1
+      },
+      {
+        "action": "Develop a video ad version showcasing customer testimonials and product benefits.",
+        "impact": "+20-25% CTR",
+        "effort": "high",
+        "priority": 2
+      }
+    ]
+  },
+  "ab_test_recommendations": [
+    {
+      "test": "CTA Button: Current Blue vs High-Contrast Orange",
+      "hypothesis": "High-contrast colors draw more attention and increase click-through rates.",
+      "expected_lift": "10-15%",
+      "variant_suggestion": "Change button color from #4A90E2 to #FF6B35, increase size by 25%, add drop shadow."
+    },
+    {
+      "test": "Headline Variations: 'MEET THE BED FOR BACK PAIN' vs 'Limited Time: MEET THE BED FOR BACK PAIN Relief'",
+      "hypothesis": "Adding urgency in the headline will encourage immediate action.",
+      "expected_lift": "8-12%",
+      "variant_suggestion": "Change headline text to 'Limited Time: MEET THE BED FOR BACK PAIN Relief'."
+    },
+    {
+      "test": "Image Change: Current Image vs Image with Customer Using the Bed",
+      "hypothesis": "Showing a customer using the product can enhance relatability and trust.",
+      "expected_lift": "10-15%",
+      "variant_suggestion": "Replace current image with one showing a satisfied customer using the bed."
+    },
+    {
+      "test": "Urgency Indicators: No Countdown Timer vs Countdown Timer Present",
+      "hypothesis": "Adding a countdown timer will create urgency and prompt quicker decisions.",
+      "expected_lift": "12-15%",
+      "variant_suggestion": "Add a countdown timer graphic next to the CTA."
+    },
+    {
+      "test": "Social Proof: No Testimonials vs Testimonials Included",
+      "hypothesis": "Including testimonials will increase trust and encourage purchases.",
+      "expected_lift": "10-15%",
+      "variant_suggestion": "Add a testimonial section with quotes and star ratings."
+    },
+    {
+      "test": "Color Scheme: Current Colors vs Warmer Tones",
+      "hypothesis": "Warmer tones can create a more inviting atmosphere, increasing engagement.",
+      "expected_lift": "8-10%",
+      "variant_suggestion": "Change dominant colors to warmer tones like soft oranges or yellows."
+    },
+    {
+      "test": "Layout Variations: Current Layout vs More Visual Elements",
+      "hypothesis": "A more dynamic layout with visual elements will capture attention better.",
+      "expected_lift": "10-12%",
+      "variant_suggestion": "Incorporate visual elements like badges for urgency and stock levels."
+    }
+  ],
+  "executive_summary": {
+    "overall_grade": "A-",
+    "one_sentence_verdict": "The ad effectively communicates the benefits of the product but lacks urgency and social proof.",
+    "biggest_opportunity": "Incorporate urgency and scarcity elements to drive immediate action.",
+    "estimated_roi_multiplier": "3x"
+  },
+  "ai_generated": true,
+  "metadata": {
+    "filename": "i0009.png",
+    "upload_timestamp": "20251026_074319",
+    "file_type": "image",
+    "target_audience": {
+      "ageMin": 18,
+      "ageMax": 65,
+      "gender": "all",
+      "demographics": []
+    },
+    "ai_powered": true
+  }
+}

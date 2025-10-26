@@ -7,7 +7,7 @@ import HistoryPage from './HistoryPage';
 import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('landing'); // 'landing', 'login', 'signup', 'dashboard', 'history'
+  const [currentPage, setCurrentPage] = useState('landing'); // 'landing', 'login', 'signup', 'dashboard', 'history', 'view-analysis'
   const [user, setUser] = useState(null);
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
 
@@ -23,10 +23,14 @@ function App() {
 
   const handleLogout = () => {
     setUser(null);
+    setSelectedAnalysis(null);
     setCurrentPage('landing');
   };
 
   const navigateTo = (page) => {
+    if (page === 'dashboard') {
+      setSelectedAnalysis(null); // Clear any selected analysis when going to fresh dashboard
+    }
     setCurrentPage(page);
   };
 
@@ -55,6 +59,15 @@ function App() {
 
       {currentPage === 'history' && (
         <HistoryPage user={user} onViewAnalysis={viewAnalysis} onNavigate={navigateTo} onLogout={handleLogout} />
+      )}
+
+      {currentPage === 'view-analysis' && selectedAnalysis && (
+        <Dashboard 
+          user={user} 
+          onLogout={handleLogout} 
+          onNavigate={navigateTo}
+          preloadedAnalysis={selectedAnalysis}
+        />
       )}
     </div>
   );

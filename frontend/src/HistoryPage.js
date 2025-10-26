@@ -15,19 +15,27 @@ function HistoryPage({ user, onViewAnalysis, onNavigate, onLogout }) {
   const loadHistory = async () => {
     setLoading(true);
     try {
-      // Load from backend
-      const response = await fetch('http://localhost:5001/api/results');
-      if (response.ok) {
-        const data = await response.json();
-        setAnalyses(data);
+      // Try to load from backend first
+      try {
+        const response = await fetch('http://localhost:5001/api/results');
+        if (response.ok) {
+          const data = await response.json();
+          setAnalyses(data);
+          setLoading(false);
+          return;
+        }
+      } catch (backendError) {
+        console.log('Backend not available, using localStorage');
+      }
+      
+      // Fallback to localStorage
+      const saved = localStorage.getItem('ad_analyses');
+      if (saved) {
+        const parsedAnalyses = JSON.parse(saved);
+        setAnalyses(parsedAnalyses);
       }
     } catch (error) {
       console.error('Error loading history:', error);
-      // Load from localStorage as fallback
-      const saved = localStorage.getItem('ad_analyses');
-      if (saved) {
-        setAnalyses(JSON.parse(saved));
-      }
     } finally {
       setLoading(false);
     }
@@ -49,6 +57,7 @@ function HistoryPage({ user, onViewAnalysis, onNavigate, onLogout }) {
     link.href = url;
     link.download = `analysis-${analysis.id}.json`;
     link.click();
+    URL.revokeObjectURL(url);
   };
 
   const getFilteredAndSorted = () => {
@@ -87,15 +96,31 @@ function HistoryPage({ user, onViewAnalysis, onNavigate, onLogout }) {
   };
 
   const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    const now = new Date();
-    const diff = now - date;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    try {
+      const date = new Date(timestamp);
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        return 'Unknown date';
+      }
+      
+      const now = new Date();
+      const diff = now - date;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    if (days === 0) return 'Today';
-    if (days === 1) return 'Yesterday';
-    if (days < 7) return `${days} days ago`;
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      if (days === 0) return 'Today';
+      if (days === 1) return 'Yesterday';
+      if (days < 7) return `${days} days ago`;
+      
+      return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return 'Unknown date';
+    }
   };
 
   const filteredAnalyses = getFilteredAndSorted();
@@ -189,6 +214,23 @@ function HistoryPage({ user, onViewAnalysis, onNavigate, onLogout }) {
           <div className="empty-icon">📊</div>
           <h3>No analyses yet</h3>
           <p>Start by analyzing your first advertisement</p>
+          <button 
+            className="nav-btn-try" 
+            onClick={() => onNavigate('dashboard')}
+            style={{
+              marginTop: '1rem',
+              padding: '0.75rem 1.5rem',
+              background: '#5b6ff8',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '1rem',
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+          >
+            Analyze Your First Ad
+          </button>
         </div>
       ) : (
         <div className="history-grid">
@@ -249,12 +291,14 @@ function HistoryPage({ user, onViewAnalysis, onNavigate, onLogout }) {
                   <button
                     className="action-btn secondary"
                     onClick={() => exportAnalysis(analysis)}
+                    title="Export as JSON"
                   >
                     <Download size={16} />
                   </button>
                   <button
                     className="action-btn danger"
                     onClick={() => deleteAnalysis(analysis.id)}
+                    title="Delete"
                   >
                     <Trash2 size={16} />
                   </button>
