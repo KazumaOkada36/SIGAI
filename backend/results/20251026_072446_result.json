@@ -1,0 +1,196 @@
+{
+  "success": true,
+  "type": "image",
+  "filename": "20251026_072446_i0003",
+  "timestamp": "2025-10-26T07:25:35.772991",
+  "summary": {
+    "grade": "A-",
+    "overall_score": 9,
+    "headline": "A visually compelling ad that effectively communicates urgency and value.",
+    "description": "Incorporate social proof elements to enhance trust and relatability.",
+    "key_insights": [
+      "\u2705 Strong visual hierarchy with impact (HIGH) - clear focal points and effective use of space.",
+      "\u2705 Effective urgency cues with impact (MEDIUM) - communicates time-sensitive offers well.",
+      "\u26a0\ufe0f Limited social proof elements with severity (MEDIUM) - lacks testimonials or user experiences.",
+      "\u26a0\ufe0f Curiosity gap is low with severity (LOW) - the ad is straightforward but may not intrigue viewers."
+    ]
+  },
+  "features": {
+    "emotional_signals": {
+      "primary_emotion": "urgency",
+      "emotional_intensity": 7,
+      "emotional_authenticity": 6,
+      "aspirational_appeal": 5,
+      "humor_present": 1,
+      "creates_fomo": 1,
+      "fomo_intensity": 6,
+      "trust_building_elements": 7,
+      "vulnerability_shown": 2,
+      "relatability_score": 5
+    },
+    "visual_composition": {
+      "visual_complexity": 4,
+      "composition_balance": 8,
+      "rule_of_thirds_adherence": 6,
+      "focal_point_clarity": 9,
+      "color_scheme": "bold",
+      "color_psychology_match": 8,
+      "dominant_colors": [
+        "black",
+        "white",
+        "blue"
+      ],
+      "color_harmony": 7,
+      "contrast_level": 9,
+      "whitespace_usage": 8,
+      "visual_hierarchy_clarity": 9,
+      "professional_polish": 8,
+      "production_quality": 8,
+      "lighting_quality": 7
+    },
+    "engagement_predictors": {
+      "scroll_stopping_power": 7,
+      "first_3_sec_hook": 8,
+      "attention_retention": 6,
+      "curiosity_gap": 5,
+      "social_proof_elements": 3,
+      "scarcity_indicators": 6,
+      "urgency_level": 7,
+      "pattern_interruption": 5,
+      "novelty_factor": 4,
+      "memability": 6,
+      "shareability": 5
+    },
+    "copy_analysis": {
+      "headline_strength": 8,
+      "headline_clarity": 9,
+      "value_prop_clarity": 8,
+      "benefit_focused": 8,
+      "readability_score": 7,
+      "power_words_used": 6,
+      "call_to_action_present": 1,
+      "cta_strength": 7,
+      "cta_specificity": 8,
+      "cta_urgency": 6,
+      "message_clarity": 8,
+      "cta_text": "Learn more",
+      "headline_text": "30 Years of Sprinter - Summer Sales Event",
+      "body_copy_summary": "Savings for 2025 Cargo and Crew Sprinters with customer cash offers."
+    },
+    "predicted_performance": {
+      "estimated_ctr": 7,
+      "estimated_engagement_rate": 6,
+      "estimated_conversion_potential": 7,
+      "virality_potential": 5,
+      "overall_effectiveness": 7
+    },
+    "critical_weaknesses": [
+      "Limited social proof elements with severity (MEDIUM) - lacks testimonials or user experiences.",
+      "Curiosity gap is low with severity (LOW) - the ad is straightforward but may not intrigue viewers.",
+      "Vulnerability shown is low with severity (LOW) - lacks personal connection or storytelling."
+    ],
+    "key_strengths": [
+      "Strong visual hierarchy with impact (HIGH) - clear focal points and effective use of space.",
+      "Effective urgency cues with impact (MEDIUM) - communicates time-sensitive offers well.",
+      "High clarity in messaging with impact (HIGH) - straightforward and easy to understand."
+    ],
+    "executive_summary": {
+      "overall_grade": "A-",
+      "one_sentence_verdict": "A visually compelling ad that effectively communicates urgency and value.",
+      "biggest_opportunity": "Incorporate social proof elements to enhance trust and relatability.",
+      "estimated_roi_multiplier": "3x"
+    },
+    "improvement_roadmap": {
+      "quick_wins": [
+        {
+          "action": "AI generation failed - manual review needed",
+          "impact": "Unable to estimate",
+          "effort": "low",
+          "priority": 1
+        }
+      ],
+      "medium_term": [],
+      "long_term": []
+    },
+    "ab_test_recommendations": [
+      {
+        "test": "AI generation failed",
+        "hypothesis": "Manual review recommended",
+        "expected_lift": "Unable to estimate",
+        "variant_suggestion": "Please analyze manually"
+      }
+    ],
+    "_meta": {
+      "ad_id": "20251026_072446_i0003",
+      "extraction_timestamp": "2025-10-26T07:25:35.772848",
+      "model": "gpt-4o-mini",
+      "lava_request_id": "req_01K8GEGM262X79HH9C501ZY4C2",
+      "tokens_used": {
+        "prompt_tokens": 26598,
+        "completion_tokens": 787,
+        "total_tokens": 27385,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "gateway": "lava",
+      "ai_generated_recommendations": true
+    }
+  },
+  "critical_weaknesses": [
+    "Limited social proof elements with severity (MEDIUM) - lacks testimonials or user experiences.",
+    "Curiosity gap is low with severity (LOW) - the ad is straightforward but may not intrigue viewers.",
+    "Vulnerability shown is low with severity (LOW) - lacks personal connection or storytelling."
+  ],
+  "key_strengths": [
+    "Strong visual hierarchy with impact (HIGH) - clear focal points and effective use of space.",
+    "Effective urgency cues with impact (MEDIUM) - communicates time-sensitive offers well.",
+    "High clarity in messaging with impact (HIGH) - straightforward and easy to understand."
+  ],
+  "improvement_roadmap": {
+    "quick_wins": [
+      {
+        "action": "AI generation failed - manual review needed",
+        "impact": "Unable to estimate",
+        "effort": "low",
+        "priority": 1
+      }
+    ],
+    "medium_term": [],
+    "long_term": []
+  },
+  "ab_test_recommendations": [
+    {
+      "test": "AI generation failed",
+      "hypothesis": "Manual review recommended",
+      "expected_lift": "Unable to estimate",
+      "variant_suggestion": "Please analyze manually"
+    }
+  ],
+  "executive_summary": {
+    "overall_grade": "A-",
+    "one_sentence_verdict": "A visually compelling ad that effectively communicates urgency and value.",
+    "biggest_opportunity": "Incorporate social proof elements to enhance trust and relatability.",
+    "estimated_roi_multiplier": "3x"
+  },
+  "ai_generated": true,
+  "metadata": {
+    "filename": "i0003.png",
+    "upload_timestamp": "20251026_072446",
+    "file_type": "image",
+    "target_audience": {
+      "ageMin": 18,
+      "ageMax": 65,
+      "gender": "all",
+      "demographics": []
+    },
+    "ai_powered": true
+  }
+}

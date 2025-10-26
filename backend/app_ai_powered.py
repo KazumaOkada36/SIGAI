@@ -1,6 +1,6 @@
 """
-Flask Backend for Ad Intelligence Platform - FIXED VERSION
-Properly transforms AI analysis into frontend-expected format
+Flask Backend for Ad Intelligence Platform - AI-POWERED VERSION
+Uses OpenAI through Lava to generate ALL recommendations dynamically
 """
 
 from flask import Flask, request, jsonify, send_from_directory
@@ -13,9 +13,8 @@ from datetime import datetime
 import cv2
 import numpy as np
 
-# Import our analyzers
-from lava_extractor_enhanced import LavaAdFeatureExtractor
-from video_analyzer import VideoAdAnalyzer
+# Import our AI-powered analyzer
+from lava_extractor_ai_powered import LavaAdFeatureExtractor
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 CORS(app, resources={r"/api/*": {"origins": "*"}})
@@ -31,9 +30,18 @@ os.makedirs(RESULTS_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100MB max
 
-# Initialize analyzers
+# Initialize AI-powered analyzer
 image_analyzer = LavaAdFeatureExtractor(model='gpt-4o-mini', max_workers=1)
-video_analyzer = VideoAdAnalyzer(model='gpt-4o-mini')
+
+print("\n" + "="*70)
+print("✅ AI-POWERED AD INTELLIGENCE BACKEND INITIALIZED")
+print("="*70)
+print("Using OpenAI through Lava for:")
+print("  • Feature extraction")
+print("  • Improvement roadmaps (AI-generated)")
+print("  • A/B test recommendations (AI-generated)")
+print("  • Strategic insights")
+print("="*70 + "\n")
 
 
 def allowed_file(filename):
@@ -71,18 +79,23 @@ def health_check():
     """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'service': 'Ad Intelligence API',
-        'version': '1.0.0'
+        'service': 'AI-Powered Ad Intelligence API',
+        'version': '2.0.0',
+        'ai_features': {
+            'roadmap_generation': 'AI-powered',
+            'ab_testing': 'AI-powered',
+            'recommendations': 'AI-powered'
+        }
     })
 
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze_ad():
     """
-    Main endpoint to analyze image or video ad
+    Main endpoint to analyze image or video ad with AI-generated recommendations
     
     Expects: multipart/form-data with 'file' field
-    Returns: JSON with extracted features in frontend-compatible format
+    Returns: JSON with AI-generated features, roadmaps, and A/B tests
     """
     
     try:
@@ -105,7 +118,7 @@ def analyze_ad():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
         file.save(filepath)
         
-        print(f"📁 File saved: {filepath}")
+        print(f"\n📁 File saved: {filepath}")
         
         # Get target audience if provided
         target_audience_json = request.form.get('target_audience', '{}')
@@ -113,10 +126,10 @@ def analyze_ad():
         
         # Analyze based on file type
         if is_video(filename):
-            print("🎬 Analyzing video...")
-            result = analyze_video_file(filepath)
+            print("🎬 Video analysis not yet supported with AI recommendations")
+            return jsonify({'error': 'Video analysis coming soon'}), 501
         else:
-            print("📸 Analyzing image...")
+            print("📸 Analyzing image with AI-powered recommendations...")
             result = analyze_image_file(filepath)
         
         # Add metadata
@@ -124,7 +137,8 @@ def analyze_ad():
             'filename': filename,
             'upload_timestamp': timestamp,
             'file_type': 'video' if is_video(filename) else 'image',
-            'target_audience': target_audience
+            'target_audience': target_audience,
+            'ai_powered': True
         }
         
         # Save result
@@ -134,7 +148,7 @@ def analyze_ad():
         with open(result_path, 'w') as f:
             json.dump(result, f, indent=2)
         
-        print(f"✅ Analysis complete!")
+        print(f"✅ AI-powered analysis complete!\n")
         
         return jsonify(result)
     
@@ -146,8 +160,14 @@ def analyze_ad():
 
 
 def analyze_image_file(filepath):
-    """Analyze image ad and return frontend-compatible format"""
+    """Analyze image ad with AI-generated recommendations"""
     
+    print("🤖 Using AI to generate:")
+    print("   • Core feature analysis")
+    print("   • Improvement roadmap (AI-generated)")
+    print("   • A/B test recommendations (AI-generated)")
+    
+    # Extract features with AI-generated recommendations
     features = image_analyzer.extract_features(filepath)
     
     # Clean up numpy types
@@ -157,22 +177,9 @@ def analyze_image_file(filepath):
     return transform_to_frontend_format(features, 'image')
 
 
-def analyze_video_file(filepath):
-    """Analyze video ad and return frontend-compatible format"""
-    
-    analysis = video_analyzer.analyze_video(filepath, num_frames='auto')
-    
-    # Clean up numpy types
-    analysis = convert_numpy(analysis)
-    
-    # Transform to frontend format
-    return transform_to_frontend_format(analysis, 'video')
-
-
 def transform_to_frontend_format(raw_features, file_type):
     """
     Transform raw AI features into the format expected by frontend
-    This matches the structure from backend_working.py
     """
     
     if 'error' in raw_features:
@@ -192,14 +199,18 @@ def transform_to_frontend_format(raw_features, file_type):
     # Generate summary
     summary = generate_summary(raw_features, file_type)
     
-    # Get improvement roadmap if available
-    roadmap = raw_features.get('improvement_roadmap', generate_default_roadmap(raw_features))
+    # Get AI-generated improvement roadmap (already in features from AI)
+    roadmap = raw_features.get('improvement_roadmap', {
+        'quick_wins': [],
+        'medium_term': [],
+        'long_term': []
+    })
     
-    # Get A/B test recommendations
-    ab_tests = raw_features.get('ab_test_recommendations', generate_default_ab_tests(raw_features))
+    # Get AI-generated A/B test recommendations (already in features from AI)
+    ab_tests = raw_features.get('ab_test_recommendations', [])
     
     # Get executive summary
-    exec_summary = raw_features.get('executive_summary', generate_default_exec_summary(raw_features))
+    exec_summary = raw_features.get('executive_summary', {})
     
     # Structure response for frontend
     return {
@@ -209,18 +220,19 @@ def transform_to_frontend_format(raw_features, file_type):
         'timestamp': datetime.now().isoformat(),
         'summary': summary,
         'features': raw_features,
-        'critical_weaknesses': raw_features.get('critical_weaknesses', extract_weaknesses(raw_features)),
-        'key_strengths': raw_features.get('key_strengths', extract_strengths(raw_features)),
-        'improvement_roadmap': roadmap,
-        'ab_test_recommendations': ab_tests,
-        'executive_summary': exec_summary
+        'critical_weaknesses': raw_features.get('critical_weaknesses', []),
+        'key_strengths': raw_features.get('key_strengths', []),
+        'improvement_roadmap': roadmap,  # AI-generated
+        'ab_test_recommendations': ab_tests,  # AI-generated
+        'executive_summary': exec_summary,
+        'ai_generated': True  # Flag to indicate AI-generated content
     }
 
 
 def generate_summary(features, file_type):
-    """Generate human-readable summary from features"""
+    """Generate human-readable summary from AI features"""
     
-    # Use executive summary if available
+    # Use executive summary from AI
     if 'executive_summary' in features:
         exec_sum = features['executive_summary']
         return {
@@ -254,10 +266,11 @@ def generate_summary(features, file_type):
 def extract_score_from_grade(grade_str):
     """Convert grade like 'B+' to numeric score"""
     grade_map = {
-        'A+': 10, 'A': 9, 'A-': 8.5,
-        'B+': 8, 'B': 7.5, 'B-': 7,
-        'C+': 6.5, 'C': 6, 'C-': 5.5,
-        'D': 5, 'F': 4
+        'A+': 10, 'A': 9.5, 'A-': 9,
+        'B+': 8.5, 'B': 8, 'B-': 7.5,
+        'C+': 7, 'C': 6.5, 'C-': 6,
+        'D+': 5.5, 'D': 5, 'D-': 4.5,
+        'F': 4
     }
     return grade_map.get(grade_str, 7.5)
 
@@ -268,8 +281,11 @@ def score_to_grade(score):
     elif score >= 9: return 'A'
     elif score >= 8.5: return 'A-'
     elif score >= 8: return 'B+'
-    elif score >= 7: return 'B'
+    elif score >= 7.5: return 'B'
+    elif score >= 7: return 'B-'
+    elif score >= 6.5: return 'C+'
     elif score >= 6: return 'C'
+    elif score >= 5.5: return 'C-'
     elif score >= 5: return 'D'
     else: return 'F'
 
@@ -285,6 +301,7 @@ def get_grade_description(grade):
         'B-': 'Satisfactory',
         'C+': 'Average Performance',
         'C': 'Below Average',
+        'C-': 'Needs Improvement',
         'D': 'Poor Performance',
         'F': 'Needs Major Improvement'
     }
@@ -292,10 +309,10 @@ def get_grade_description(grade):
 
 
 def generate_insights_from_features(features):
-    """Generate key insights from feature analysis"""
+    """Generate key insights from AI feature analysis"""
     insights = []
     
-    # Check for pre-existing insights
+    # Use AI-generated strengths and weaknesses
     if 'key_strengths' in features and features['key_strengths']:
         for strength in features['key_strengths'][:2]:
             insights.append(f"✅ {strength}")
@@ -308,9 +325,8 @@ def generate_insights_from_features(features):
     if insights:
         return insights[:5]
     
-    # Otherwise, compute from raw features
+    # Fallback: compute from raw features
     engagement = features.get('engagement_predictors', {})
-    emotional = features.get('emotional_signals', {})
     copy_analysis = features.get('copy_analysis', {})
     visual = features.get('visual_composition', {})
     
@@ -319,26 +335,18 @@ def generate_insights_from_features(features):
     if scroll_stop >= 7:
         insights.append(f"✅ Strong scroll-stopping power ({scroll_stop}/10)")
     elif scroll_stop < 5:
-        insights.append(f"⚠️ Weak scroll-stopping power ({scroll_stop}/10) - needs attention")
+        insights.append(f"⚠️ Weak scroll-stopping power ({scroll_stop}/10)")
     
     # CTA analysis
     cta_present = copy_analysis.get('call_to_action_present', False)
     if cta_present:
         cta_strength = copy_analysis.get('cta_strength', 0)
         if cta_strength >= 7:
-            insights.append(f"✅ Clear and strong call-to-action ({cta_strength}/10)")
+            insights.append(f"✅ Strong call-to-action ({cta_strength}/10)")
         else:
-            insights.append(f"⚠️ CTA present but lacks urgency ({cta_strength}/10)")
+            insights.append(f"⚠️ CTA needs strengthening ({cta_strength}/10)")
     else:
-        insights.append("❌ No clear call-to-action - critical weakness")
-    
-    # Emotional appeal
-    emotion = emotional.get('primary_emotion', 'unknown')
-    intensity = emotional.get('emotional_intensity', 0)
-    if intensity >= 7:
-        insights.append(f"💡 Strong emotional appeal: {emotion} (intensity: {intensity}/10)")
-    elif intensity < 5:
-        insights.append(f"💡 Weak emotional connection: {emotion} (intensity: {intensity}/10)")
+        insights.append("❌ No clear call-to-action")
     
     # Visual quality
     polish = visual.get('professional_polish', 0)
@@ -348,160 +356,6 @@ def generate_insights_from_features(features):
         insights.append(f"⚠️ Visual quality needs improvement ({polish}/10)")
     
     return insights[:5]
-
-
-def extract_weaknesses(features):
-    """Extract critical weaknesses if not provided"""
-    if 'critical_weaknesses' in features:
-        return features['critical_weaknesses']
-    
-    weaknesses = []
-    
-    # Check engagement
-    engagement = features.get('engagement_predictors', {})
-    if engagement.get('scroll_stopping_power', 10) < 5:
-        weaknesses.append("Low scroll-stopping power (HIGH severity) - Ad fails to capture attention")
-    
-    if engagement.get('urgency_level', 10) < 5:
-        weaknesses.append("Lacks urgency (MEDIUM severity) - No time-sensitive elements")
-    
-    # Check copy
-    copy_analysis = features.get('copy_analysis', {})
-    if not copy_analysis.get('call_to_action_present', True):
-        weaknesses.append("No clear CTA (HIGH severity) - Users won't know what action to take")
-    elif copy_analysis.get('cta_strength', 10) < 5:
-        weaknesses.append("Weak CTA (MEDIUM severity) - Call-to-action lacks clarity or urgency")
-    
-    # Check social proof
-    if engagement.get('social_proof_elements', 10) < 4:
-        weaknesses.append("Limited social proof (MEDIUM severity) - Missing testimonials or trust signals")
-    
-    return weaknesses[:5]
-
-
-def extract_strengths(features):
-    """Extract key strengths if not provided"""
-    if 'key_strengths' in features:
-        return features['key_strengths']
-    
-    strengths = []
-    
-    visual = features.get('visual_composition', {})
-    engagement = features.get('engagement_predictors', {})
-    copy_analysis = features.get('copy_analysis', {})
-    
-    if visual.get('professional_polish', 0) >= 7:
-        polish = visual.get('professional_polish')
-        strengths.append(f"High production quality (HIGH impact) - Professional polish: {polish}/10")
-    
-    if visual.get('composition_balance', 0) >= 7:
-        strengths.append("Strong visual composition (HIGH impact) - Well-balanced design")
-    
-    if engagement.get('scroll_stopping_power', 0) >= 7:
-        power = engagement.get('scroll_stopping_power')
-        strengths.append(f"Excellent attention-grabbing (HIGH impact) - Scroll-stop power: {power}/10")
-    
-    if copy_analysis.get('message_clarity', 0) >= 7:
-        strengths.append("Clear messaging (MEDIUM impact) - Value proposition is easy to understand")
-    
-    return strengths[:5]
-
-
-def generate_default_roadmap(features):
-    """Generate improvement roadmap if not provided"""
-    if 'improvement_roadmap' in features:
-        return features['improvement_roadmap']
-    
-    # Generate based on weaknesses
-    quick_wins = []
-    medium_term = []
-    long_term = []
-    
-    copy_analysis = features.get('copy_analysis', {})
-    engagement = features.get('engagement_predictors', {})
-    
-    # Quick wins
-    if copy_analysis.get('cta_strength', 10) < 7:
-        quick_wins.append({
-            'action': 'Increase CTA button size by 40% and use high-contrast color',
-            'impact': 'Expected +12-15% click-through rate increase',
-            'effort': 'low',
-            'priority': 1
-        })
-    
-    if engagement.get('urgency_level', 10) < 5:
-        quick_wins.append({
-            'action': 'Add urgency text: "Limited Time" or countdown timer',
-            'impact': 'Expected +8-10% engagement boost',
-            'effort': 'low',
-            'priority': 1
-        })
-    
-    # Medium term
-    if engagement.get('social_proof_elements', 10) < 5:
-        medium_term.append({
-            'action': 'Add social proof: customer count, ratings, or testimonials',
-            'impact': 'Expected +15-20% trust and conversion improvement',
-            'effort': 'medium',
-            'priority': 2
-        })
-    
-    # Long term
-    long_term.append({
-        'action': 'Develop platform-specific variants (Stories, TikTok, Feed)',
-        'impact': 'Expected 30-40% overall performance increase',
-        'effort': 'high',
-        'priority': 3
-    })
-    
-    return {
-        'quick_wins': quick_wins,
-        'medium_term': medium_term,
-        'long_term': long_term
-    }
-
-
-def generate_default_ab_tests(features):
-    """Generate A/B test recommendations if not provided"""
-    if 'ab_test_recommendations' in features:
-        return features['ab_test_recommendations']
-    
-    tests = []
-    
-    # CTA test
-    tests.append({
-        'test': 'CTA Color Variant',
-        'hypothesis': 'High-contrast orange CTA will outperform current by capturing more attention',
-        'expected_lift': '10-15%',
-        'variant_suggestion': 'Change CTA button to #F97316 (orange) with white text'
-    })
-    
-    # Headline test
-    tests.append({
-        'test': 'Headline: Benefit vs Feature',
-        'hypothesis': 'Benefit-focused headlines outperform feature-focused by creating emotional connection',
-        'expected_lift': '15-20%',
-        'variant_suggestion': 'Replace with clear benefit statement focusing on outcome'
-    })
-    
-    return tests
-
-
-def generate_default_exec_summary(features):
-    """Generate executive summary if not provided"""
-    if 'executive_summary' in features:
-        return features['executive_summary']
-    
-    performance = features.get('predicted_performance', {})
-    score = performance.get('overall_effectiveness', 7)
-    grade = score_to_grade(score)
-    
-    return {
-        'overall_grade': grade,
-        'one_sentence_verdict': f'Solid creative foundation with optimization opportunities',
-        'biggest_opportunity': 'Strengthen call-to-action with high-contrast design and urgency language',
-        'estimated_roi_multiplier': '2-3x'
-    }
 
 
 @app.route('/api/results/<result_id>', methods=['GET'])
@@ -532,7 +386,8 @@ def list_results():
                     'timestamp': data.get('metadata', {}).get('upload_timestamp'),
                     'filename': data.get('metadata', {}).get('filename'),
                     'type': data.get('metadata', {}).get('file_type'),
-                    'grade': data.get('summary', {}).get('grade')
+                    'grade': data.get('summary', {}).get('grade'),
+                    'ai_powered': data.get('metadata', {}).get('ai_powered', False)
                 })
     
     results.sort(key=lambda x: x['timestamp'], reverse=True)
@@ -541,18 +396,19 @@ def list_results():
 
 if __name__ == '__main__':
     print("\n" + "="*70)
-    print("🚀 AD INTELLIGENCE API SERVER - FIXED VERSION")
+    print("🚀 AI-POWERED AD INTELLIGENCE API SERVER")
     print("="*70)
     print("\nStarting server on http://localhost:5001")
     print("\nEndpoints:")
-    print("  POST /api/analyze - Upload and analyze ad")
+    print("  POST /api/analyze - Upload and analyze ad (AI-powered)")
     print("  GET  /api/results - List previous analyses")
     print("  GET  /api/health  - Health check")
-    print("\nFeatures:")
-    print("  ✅ Proper data transformation")
-    print("  ✅ Frontend-compatible format")
-    print("  ✅ Automatic fallbacks")
-    print("  ✅ Comprehensive insights")
+    print("\nAI Features:")
+    print("  🤖 AI-generated improvement roadmaps")
+    print("  🤖 AI-generated A/B test recommendations")
+    print("  🤖 Specific, actionable insights")
+    print("  🤖 Industry benchmark-based estimates")
+    print("\nNo more hardcoded recommendations!")
     print("\n" + "="*70 + "\n")
     
     app.run(debug=True, host='0.0.0.0', port=5001)
