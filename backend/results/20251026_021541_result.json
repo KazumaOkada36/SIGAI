@@ -1,0 +1,127 @@
+{
+  "success": true,
+  "type": "video",
+  "features": {
+    "video_id": "20251026_021541_v0008",
+    "frame_analyses": [
+      {
+        "temporal_context": {
+          "estimated_position": "opening",
+          "pacing": "medium",
+          "momentum": 7
+        },
+        "frame_content": {
+          "primary_focus": "text",
+          "visual_energy": 6,
+          "information_density": 5
+        },
+        "engagement_signals": {
+          "hook_strength": 8,
+          "attention_retention": 7,
+          "emotional_peak": 6,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 2,
+          "scene_complexity": 4,
+          "text_legibility": 9,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 0.0,
+        "frame_number": 0
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "opening",
+          "pacing": "medium",
+          "momentum": 5
+        },
+        "frame_content": {
+          "primary_focus": "product",
+          "visual_energy": 6,
+          "information_density": 4
+        },
+        "engagement_signals": {
+          "hook_strength": 7,
+          "attention_retention": 5,
+          "emotional_peak": 4,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 3,
+          "scene_complexity": 4,
+          "text_legibility": 7,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 6.715041666666666,
+        "frame_number": 161
+      },
+      {
+        "temporal_context": {
+          "estimated_position": "opening",
+          "pacing": "medium",
+          "momentum": 7
+        },
+        "frame_content": {
+          "primary_focus": "product",
+          "visual_energy": 6,
+          "information_density": 4
+        },
+        "engagement_signals": {
+          "hook_strength": 7,
+          "attention_retention": 6,
+          "emotional_peak": 5,
+          "cta_presence": false
+        },
+        "video_specific": {
+          "motion_intensity": 5,
+          "scene_complexity": 4,
+          "text_legibility": 8,
+          "sound_implied": "mixed"
+        },
+        "timestamp": 13.430083333333332,
+        "frame_number": 322
+      }
+    ],
+    "video_level_features": {
+      "overall_engagement": {
+        "average_hook_strength": 7.3,
+        "average_attention_retention": 6.0,
+        "first_3_seconds_hook": 8,
+        "has_clear_cta": false,
+        "opening_hook_present": true
+      },
+      "video_dynamics": {
+        "average_motion_intensity": 3.3,
+        "pacing_variety": 0,
+        "narrative_arc": "weak"
+      },
+      "predicted_performance": {
+        "estimated_completion_rate": 7.2,
+        "estimated_engagement": 6.0,
+        "scroll_stop_likelihood": 8
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-10-26T02:15:54.424641",
+      "model": "gpt-4o-mini",
+      "frames_analyzed": 3
+    }
+  },
+  "summary": {
+    "grade": "C",
+    "overall_score": 6.0,
+    "headline": "Grade C - Average Performance",
+    "description": "This video ad scored 6.0/10 for engagement.",
+    "key_insights": [
+      "\u2705 Strong opening hook (8/10)",
+      "\u26a0\ufe0f No clear call-to-action",
+      "\ud83d\udcca Estimated completion rate: 7.2/10"
+    ]
+  },
+  "metadata": {
+    "filename": "v0008.mp4",
+    "upload_timestamp": "20251026_021541",
+    "file_type": "video"
+  }
+}

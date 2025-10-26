@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import cv2
 import numpy as np
-from lava_extractor import LavaAdFeatureExtractor
+from lava_extractor_enhanced import LavaAdFeatureExtractor
 from datetime import datetime
 
 class VideoAdAnalyzer:

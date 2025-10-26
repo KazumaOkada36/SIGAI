@@ -1,0 +1,228 @@
+/* Bubble Map Styles */
+
+.bubble-map-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 2rem 0;
+  }
+  
+  .bubble-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .bubble-map-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bubble-map-header p {
+    color: #718096;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+  
+  .bubble-map-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .map-action-btn {
+    background: #eef2ff;
+    border: none;
+    color: #5b6ff8;
+    padding: 0.625rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .map-action-btn:hover {
+    background: #dce4ff;
+    transform: translateY(-1px);
+  }
+  
+  .bubble-map-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(135deg, #f7f9fc 0%, #ffffff 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .bubble-map-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  /* Tooltip */
+  .bubble-tooltip {
+    position: absolute;
+    background: rgba(26, 32, 44, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 100;
+    max-width: 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tooltip-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .tooltip-description {
+    font-size: 0.75rem;
+    opacity: 0.9;
+  }
+  
+  /* Node Detail Panel */
+  .node-detail-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    z-index: 200;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  .detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .detail-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+  }
+  
+  .close-detail {
+    background: #f7fafc;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: #718096;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  
+  .close-detail:hover {
+    background: #e2e8f0;
+    color: #2d3748;
+  }
+  
+  .detail-content {
+    padding: 1.5rem;
+  }
+  
+  .detail-score {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .detail-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-recommendation {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #5b6ff8;
+    font-size: 0.875rem;
+    color: #2d3748;
+    line-height: 1.5;
+  }
+  
+  /* Legend */
+  .bubble-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .bubble-map-canvas-wrapper {
+      height: 400px;
+    }
+  
+    .bubble-legend {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    .node-detail-panel {
+      width: 90%;
+    }
+  }

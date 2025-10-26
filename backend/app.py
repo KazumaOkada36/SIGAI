@@ -15,7 +15,7 @@ import cv2
 import numpy as np
 
 # Import our analyzers
-from lava_extractor import LavaAdFeatureExtractor
+from lava_extractor_enhanced import LavaAdFeatureExtractor
 from video_analyzer import VideoAdAnalyzer
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
@@ -341,11 +341,11 @@ if __name__ == '__main__':
     print("\n" + "="*70)
     print("🚀 AD INTELLIGENCE API SERVER")
     print("="*70)
-    print("\nStarting server on http://localhost:5000")
+    print("\nStarting server on http://localhost:5001")
     print("\nEndpoints:")
     print("  POST /api/analyze - Upload and analyze ad")
     print("  GET  /api/results - List previous analyses")
     print("  GET  /api/health  - Health check")
     print("\n" + "="*70 + "\n")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)

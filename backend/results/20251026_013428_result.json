@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "type": "image",
+  "features": {
+    "emotional_signals": {
+      "primary_emotion": "urgency",
+      "emotional_intensity": 8,
+      "aspirational_appeal": 7,
+      "humor_present": false,
+      "creates_fomo": true,
+      "evokes_nostalgia": false,
+      "trust_building_elements": 6
+    },
+    "visual_composition": {
+      "visual_complexity": 6,
+      "color_scheme": "bold",
+      "dominant_colors": [
+        "black",
+        "orange"
+      ],
+      "contrast_level": 8,
+      "whitespace_usage": 4,
+      "symmetry_score": 5,
+      "motion_energy": 7,
+      "professional_polish": 8
+    },
+    "engagement_predictors": {
+      "scroll_stopping_power": 9,
+      "first_3_sec_hook": 8,
+      "curiosity_gap": 7,
+      "social_proof_elements": 5,
+      "scarcity_indicators": 9,
+      "pattern_interruption": 6,
+      "memability": 8
+    },
+    "predicted_performance": {
+      "estimated_ctr": 8,
+      "estimated_engagement": 7,
+      "estimated_conversion_potential": 9,
+      "virality_potential": 6,
+      "overall_effectiveness": 8
+    },
+    "_meta": {
+      "ad_id": "20251026_013428_i0001",
+      "extraction_timestamp": "2025-10-26T01:34:36.295760",
+      "model": "gpt-4o-mini",
+      "lava_request_id": "req_01K8FTF6QAC7SEH34N64557J1F",
+      "gateway": "lava"
+    }
+  },
+  "summary": {
+    "grade": "A",
+    "overall_score": 8,
+    "headline": "Grade A - Excellent Performance",
+    "description": "This ad scored 8/10 for overall effectiveness.",
+    "key_insights": [
+      "\u2705 Strong scroll-stopping power (9/10)",
+      "\u26a0\ufe0f No clear call-to-action",
+      "\ud83d\ude0a Primary emotion: urgency (intensity: 8/10)"
+    ]
+  },
+  "metadata": {
+    "filename": "i0001.png",
+    "upload_timestamp": "20251026_013428",
+    "file_type": "image"
+  }
+}
